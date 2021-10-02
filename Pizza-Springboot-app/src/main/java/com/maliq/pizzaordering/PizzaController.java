@@ -26,9 +26,8 @@ public class PizzaController {
 
 	@RequestMapping(value = "/savePizza", method = RequestMethod.POST)
 	// @PostMapping("/savePizza")
-	public Pizza insertPizza(@RequestBody Pizza pizza) {
+	public void insertPizza(@RequestBody Pizza pizza) {
 		System.out.println(pizza);
-		Pizza newEntry = pizzaRepository.save(pizza);
-		return newEntry;
+		pizzaRepository.save(pizza);
 	}
 }
